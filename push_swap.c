@@ -6,13 +6,9 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:13:26 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/10 11:25:42 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:05:14 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_push_swap(int a)
-{
-	return(a);
-}

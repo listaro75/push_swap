@@ -3,12 +3,12 @@ FLAGS = -Wall -Wextra -Werror
 SRCS = main.c push_swap.c
 LIBFT = ./libft/libft.a
 
-all: $(NAME) libft 
+all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
 	@cp $(LIBFT) $(NAME)
 	@ar rcs $(NAME) $(OBJS)
-	cc ${FLAGS} ${SRCS} -o ${OBJS} ${NAME} 
+	cc ${FLAGS} ${SRCS} ${LIBFT} -o ${OBJS}  ${NAME} -g
 
 .c.o:
 	@cc $(FLAGS) -c $< -o $@

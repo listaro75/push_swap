@@ -6,18 +6,20 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:13:22 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/10 11:26:58 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/10 13:48:49 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "libft/inc/ft_printf.h"
+# include "libft/inc/libft.h"
 # include <limits.h>
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 
-int	ft_push_swap(int a);
+int	*tab(char **argv);
 
 #endif
