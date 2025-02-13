@@ -6,96 +6,69 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:12:49 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/13 09:39:06 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/13 14:30:12 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_verif_digit(char **argv, int i)
+void	ft_free_stack(t_pslist **stack)
 {
-	int	j;
+	t_pslist	*temp;
 
-	j = 0;
-	while (argv[i][j])
+	while (*stack)
 	{
-		if (ft_isdigit(argv[i][j]) == 0)
-			return (1);
-		j++;
+		temp = *stack;
+		*stack = (*stack)->next;
+		free(temp);
 	}
-	return (0);
 }
 
-int	ft_verif_doublon(int *a, int index)
-{
-	int	i;
-	int	j;
 
-	i = 0;
-	j = 1;
-	while (i < index)
+
+void	ft_stack_a(t_pslist **stack_a, char **argv)
+{
+	int			i;
+	t_pslist	*current;
+	t_pslist	*new_element;
+
+	i = 1;
+	while (argv[i])
 	{
-		while (j < index)
+		new_element = ft_add_val(atoi(argv[i]));
+		if (!new_element)
+			return ;
+		if (*stack_a == NULL)
+			*stack_a = new_element;
+		else
 		{
-			if (a[i] == a[j])
-				return (1);
-			j++;
+			current = *stack_a;
+			while (current->next)
+				current = current->next;
+			current->next = new_element;
 		}
 		i++;
-		j = i + 1;
 	}
-	return (0);
-}
-
-int	*ft_init_array(char **argv, int index)
-{
-	int	*a;
-	int	i;
-
-	i = 0;
-	a = (int *)malloc((index) * sizeof(int));
-	if (!a)
-		return (NULL);
-	while (i < index)
-	{
-		if (ft_verif_digit(argv, i + 1) == 1)
-			return (free(a), NULL);
-		a[i] = ft_atoi(argv[i + 1]);
-		i++;
-	}
-	return (a);
 }
 
 int	main(int argc, char **argv)
 {
-	int	*a;
-	int	*b;
-	int	i;
-	int	h;
-	int	index_a;
-	int	index_b;
+	t_pslist	*stack_a;
+	t_pslist	*stack_b;
 
-	i = 0;
-	h = 0;
-	index_a = argc - 1;
-	index_b = 1;
-	if (argc < 2)
-	{
-		ft_printf("error");
-		return (1);
-	}
-	a = ft_init_array(argv, index_a);
-	b = ft_init_array(argv, index_b);
-	if (!a || !b)
-		return (ft_putstr_fd("error", 1), free(a), free(b), 1);
-	if (ft_verif_doublon(a, index_a) == 1)
-		return (ft_putstr_fd("error", 1), free(a), 1);
-	ft_putstr_fd("| A  | B |\n", 1);
-	while (h < index_a)
-	{
-		ft_printf("| %d  ", a[h]);
-		ft_printf("| %d |\n", b[h++]);
-	}
-	free(a);
+	stack_a = NULL;
+	stack_b = NULL;
+	if (argc < 2 || ft_verif_digit(argv) == 1 || ft_verif_doublon(argv) == 1)
+		return (ft_putstr_fd("error", 2), 1);
+	ft_stack_a(&stack_a, argv);
+	ft_pb(&stack_b, &stack_a);
+	ft_pb(&stack_b, &stack_a);
+	ft_ss(&stack_a, &stack_b);
+	ft_pa(&stack_a, &stack_b);
+
+	view(stack_a);
+	ft_putstr_fd("--------------------\n",1);
+	view(stack_b);
+	ft_free_stack(&stack_a);
 	return (0);
 }
