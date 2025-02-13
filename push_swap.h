@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:13:22 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/13 16:37:47 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/13 17:13:11 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,9 @@ void				ft_pb(t_pslist **b, t_pslist **a);
 t_pslist			*ft_add_val(int val);
 void				ft_ra(t_pslist **a);
 void				ft_rb(t_pslist **b);
+void				ft_rr(t_pslist **a, t_pslist **b);
+void				ft_rra(t_pslist **a);
+void				ft_rrb(t_pslist **b);
+void				ft_rrr(t_pslist **a, t_pslist **b);
 
 #endif

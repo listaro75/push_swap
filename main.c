@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:12:49 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/13 16:38:58 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/13 17:19:39 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	ft_free_stack(t_pslist **stack)
 		free(temp);
 	}
 }
-
-
 
 void	ft_stack_a(t_pslist **stack_a, char **argv)
 {
@@ -64,12 +62,9 @@ int	main(int argc, char **argv)
 	ft_pb(&stack_b, &stack_a);
 	ft_pb(&stack_b, &stack_a);
 	ft_pb(&stack_b, &stack_a);
-	ft_pb(&stack_b, &stack_a);
-	ft_rb(&stack_b);
-
+	ft_rrr(&stack_a, &stack_b);
 	view(stack_a);
-	ft_putstr_fd("--------------------\n",1);
+	ft_putstr_fd("--------------------\n", 1);
 	view(stack_b);
-	ft_free_stack(&stack_a);
-	return (0);
+	return (ft_free_stack(&stack_a), ft_free_stack(&stack_b), 0);
 }
