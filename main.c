@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:12:49 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/13 14:30:12 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/13 16:38:58 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,9 @@ int	main(int argc, char **argv)
 	ft_stack_a(&stack_a, argv);
 	ft_pb(&stack_b, &stack_a);
 	ft_pb(&stack_b, &stack_a);
-	ft_ss(&stack_a, &stack_b);
-	ft_pa(&stack_a, &stack_b);
+	ft_pb(&stack_b, &stack_a);
+	ft_pb(&stack_b, &stack_a);
+	ft_rb(&stack_b);
 
 	view(stack_a);
 	ft_putstr_fd("--------------------\n",1);

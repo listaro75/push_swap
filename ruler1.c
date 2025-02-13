@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 13:09:57 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/13 14:47:00 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/13 16:30:47 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ void	ft_ss(t_pslist **a, t_pslist **b)
 	t_pslist	*tmpb;
 
 	if ((!(*a) || !((*a)->next)) || (!(*b) || !((*b)->next)))
-		return ;
+	{
+		return (ft_sa(&*a), ft_sb(&*b));
+	}
 	tmpa = (*a)->next;
 	tmpb = (*b)->next;
 	(*a)->next = tmpa->next;
@@ -81,3 +83,4 @@ void	ft_pb(t_pslist **b, t_pslist **a)
 	*b = tmp;
 	ft_putstr_fd("pb\n", 1);
 }
+
