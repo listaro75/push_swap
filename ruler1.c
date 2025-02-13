@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ruler1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 12:33:17 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/12 16:00:09 by luda-cun         ###   ########.fr       */
+/*   Created: 2025/02/12 19:07:19 by luda-cun          #+#    #+#             */
+/*   Updated: 2025/02/13 09:51:30 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *nptr)
+// sa
+void	ft_swap_a(int *a)
 {
 	int	i;
-	int	sign;
-	int	result;
 
-	i = 0;
-	sign = 1;
-	result = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
-	{
-		i++;
-	}
-	if (nptr[i] == '-')
-	{
-		sign *= -1;
-		i++;
-	}
-	else if (nptr[i] == '+')
-		i++;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		result *= 10;
-		result += nptr[i] - '0';
-		i++;
-	}
-	return (result * sign);
+	i = a[0];
+	a[0] = a[1];
+	a[1] = i;
 }
+
+// sb
+void	ft_swap_b(int *b)
+{
+	int	i;
+
+	i = b[0];
+	b[0] = b[1];
+	b[1] = i;
+}
+
+// ss
+void	ft_swap_a_b(int *a, int *b)
+{
+	ft_swap_a(a);
+	ft_swap_b(b);
+}
+
+void	ft_push_a(int *a, int *b, int .index_a, int index_b)
