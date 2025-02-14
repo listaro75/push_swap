@@ -6,13 +6,11 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 17:09:51 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/13 17:12:55 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/13 18:56:06 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 void	ft_rrr(t_pslist **a, t_pslist **b)
 {

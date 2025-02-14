@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:12:49 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/13 17:19:39 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/14 03:19:30 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,11 @@ void	ft_free_stack(t_pslist **stack)
 	}
 }
 
-void	ft_stack_a(t_pslist **stack_a, char **argv)
+void	ft_stack_a(t_pslist **stack_a, char **argv, int i)
 {
-	int			i;
 	t_pslist	*current;
 	t_pslist	*new_element;
 
-	i = 1;
 	while (argv[i])
 	{
 		new_element = ft_add_val(atoi(argv[i]));
@@ -49,6 +47,19 @@ void	ft_stack_a(t_pslist **stack_a, char **argv)
 	}
 }
 
+void	free_tab(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}
+
 int	main(int argc, char **argv)
 {
 	t_pslist	*stack_a;
@@ -56,15 +67,18 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (argc < 2 || ft_verif_digit(argv) == 1 || ft_verif_doublon(argv) == 1)
-		return (ft_putstr_fd("error", 2), 1);
-	ft_stack_a(&stack_a, argv);
-	ft_pb(&stack_b, &stack_a);
-	ft_pb(&stack_b, &stack_a);
-	ft_pb(&stack_b, &stack_a);
-	ft_rrr(&stack_a, &stack_b);
+	if (argc == 2)
+	{
+		if (ft_tab_to_stack(argv, &stack_a) == 1)
+			return (ft_putstr_fd("Error", 2), 1);
+	}
+	else if (argc < 2 || ft_verif_digit(argv, 1) == 1 || ft_verif_doublon(argv,
+			1) == 1 || ft_verif_int_max_min(argv, 1) == 1)
+		return (ft_putstr_fd("Error", 2), 1);
+	if (argc > 2)
+		ft_stack_a(&stack_a, argv, 1);
+	ft_algo_base(&stack_a,&stack_b);
 	view(stack_a);
-	ft_putstr_fd("--------------------\n", 1);
 	view(stack_b);
 	return (ft_free_stack(&stack_a), ft_free_stack(&stack_b), 0);
 }

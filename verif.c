@@ -6,18 +6,16 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 13:25:52 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/13 13:29:17 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/13 19:56:36 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_verif_digit(char **argv)
+int	ft_verif_digit(char **argv, int i)
 {
-	int	i;
 	int	j;
 
-	i = 1;
 	j = 0;
 	while (argv[i])
 	{
@@ -25,6 +23,11 @@ int	ft_verif_digit(char **argv)
 		{
 			if (ft_isdigit(argv[i][j]) == 0)
 				return (1);
+			if (argv[i][j] == '-' || argv[i][j] == '+')
+			{
+				if (argv[i][j + 1] == '-' || argv[i][j + 1] == '+')
+					return (1);
+			}
 			j++;
 		}
 		j = 0;
@@ -33,12 +36,10 @@ int	ft_verif_digit(char **argv)
 	return (0);
 }
 
-int	ft_verif_doublon(char **argv)
+int	ft_verif_doublon(char **argv, int i)
 {
-	int	i;
 	int	j;
 
-	i = 1;
 	j = i + 1;
 	while (argv[i])
 	{
@@ -50,6 +51,20 @@ int	ft_verif_doublon(char **argv)
 		}
 		i++;
 		j = i + 1;
+	}
+	return (0);
+}
+
+int	ft_verif_int_max_min(char **argv, int i)
+{
+	int long	value;
+
+	while (argv[i])
+	{
+		value = ft_atoi(argv[i]);
+		if (value > 2147483647 || value < -2147483648)
+			return (1);
+		i++;
 	}
 	return (0);
 }

@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 12:33:17 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/13 19:41:46 by luda-cun         ###   ########.fr       */
+/*   Created: 2025/02/13 19:33:51 by luda-cun          #+#    #+#             */
+/*   Updated: 2025/02/14 03:18:00 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int long	ft_atoi(const char *nptr)
+int	ft_tab_to_stack(char **argv, t_pslist **stack_a)
 {
-	int			i;
-	int			sign;
-	int long	result;
+	char	**tab;
 
-	i = 0;
-	sign = 1;
-	result = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
-	{
-		i++;
-	}
-	if (nptr[i] == '-')
-	{
-		sign *= -1;
-		i++;
-	}
-	else if (nptr[i] == '+')
-		i++;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		result *= 10;
-		result += nptr[i] - '0';
-		i++;
-	}
-	return (result * sign);
+	tab = NULL;
+	tab = ft_split(argv[1], ' ');
+	if (ft_verif_digit(tab, 0) == 1 || ft_verif_doublon(tab, 0) == 1
+		|| ft_verif_int_max_min(tab, 0) == 1)
+		return (free_tab(tab), 1);
+	ft_stack_a(stack_a, tab, 0);
+	return (free_tab(tab), 0);
 }
+

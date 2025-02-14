@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:29:40 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/13 17:07:27 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/13 18:55:55 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	ft_ra(t_pslist **a)
 	last->next = tmp;
 	ft_putstr_fd("ra\n", 1);
 }
-
 
 void	ft_rb(t_pslist **b)
 {
@@ -106,4 +105,3 @@ void	ft_rrb(t_pslist **b)
 	*b = last;
 	ft_putstr_fd("rrb\n", 1);
 }
-
