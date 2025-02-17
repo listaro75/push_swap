@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:12:49 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/17 15:41:59 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/17 18:34:12 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,23 +78,20 @@ void	free_tab(char **tab)
 
 int	main(int argc, char **argv)
 {
-	t_pslist	*stack_a_f;
-	t_pslist	*stack_a_s;
+	t_pslist	*stack_a;
 	t_pslist	*stack_b;
 
-	if (argc == 2)
-	{
-		if (ft_tab_to_stack(argv, &stack_a_f) == 1)
-			return (ft_putstr_fd("Error", 2), 1);
+	if (argc == 2)  
+	{    
+		if (ft_tab_to_stack(argv, &stack_a) == 1)    
+			return (ft_putstr_fd("Error", 2), 1);  
 	}
 	else if (argc < 2 || ft_verif_digit(argv, 1) == 1 || ft_verif_doublon(argv,
 			1) == 1 || ft_verif_int_max_min(argv, 1) == 1)
 		return (ft_putstr_fd("Error", 2), 1);
 	if (argc > 2)
-		ft_stack_a(&stack_a_s, argv, 1);
-	ft_merge(&stack_a_f, &stack_a_s);
-	ft_algo_base(&stack_a_f, &stack_b);
-	view(stack_a_f);
-	view(stack_b);
-	return (ft_free_stack(&stack_a_f), ft_free_stack(&stack_b), 0);
+		ft_stack_a(&stack_a, argv, 1);
+	ft_algo_base(&stack_a, &stack_b);
+	view(stack_a);
+	return (ft_free_stack(&stack_a), ft_free_stack(&stack_b), 0);
 }
