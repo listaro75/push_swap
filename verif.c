@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 13:25:52 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/13 19:56:36 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:41:05 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int	ft_verif_digit(char **argv, int i)
 		while (argv[i][j])
 		{
 			if (ft_isdigit(argv[i][j]) == 0)
+			{
 				return (1);
+			}
 			if (argv[i][j] == '-' || argv[i][j] == '+')
 			{
 				if (argv[i][j + 1] == '-' || argv[i][j + 1] == '+')

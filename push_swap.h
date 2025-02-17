@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:13:22 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/14 01:18:58 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:11:18 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,16 +68,26 @@ int					ft_verif_int_max_min(char **argv, int i);
 int					ft_tab_to_stack(char **argv, t_pslist **stack_a);
 void				free_tab(char **tab);
 void				ft_stack_a(t_pslist **stack_a, char **argv, int i);
-int long			ft_mediane(t_pslist **stack);
+int					ft_mediane(t_pslist **stack);
 void				ft_algo_base(t_pslist **stack_a, t_pslist **stack_b);
 void				find_cheapest(t_pslist **a, t_pslist **b, t_movelist **m,
 						t_cheaplist **p);
 void				ft_count_move(t_pslist **stack_a, t_pslist **stack_b);
 int					ft_nombre(t_pslist *stack);
 void				bubble_sort(int *arr, int len);
-int long			ft_mediane(t_pslist **stack);
 void				ft_algo_base(t_pslist **stack_a, t_pslist **stack_b);
 void				ft_top_b(int value, t_movelist **m, t_pslist **b);
 int					ft_val_max_a(t_pslist *a);
-
+void				ft_end(t_pslist **a, t_pslist **b, t_cheaplist **p);
+void				ft_max_bottom(t_pslist *a, t_movelist **m, int max_a);
+void				ft_good_insert(t_pslist *a, t_movelist **m, int val);
+void				ft_combine_rrr(t_movelist **m);
+void				ft_cheapmove(t_movelist **m, t_cheaplist **p);
+int					ft_val_min_a(t_pslist *a);
+int					ft_emp_min(t_pslist *a);
+void				ft_end2(t_pslist **a);
+int					ft_nombre(t_pslist *stack);
+void				bubble_sort(int *arr, int len);
+int					ft_nombre(t_pslist *stack);
+void				bubble_sort(int *arr, int n);
 #endif

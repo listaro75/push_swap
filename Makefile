@@ -1,6 +1,7 @@
 NAME = push_swap
 FLAGS = -Wall -Wextra -Werror
-SRCS = main.c push_swap.c ruler1.c verif.c manag.c ruler2.c ruler3.c init_stack.c algo.c
+SRCS = main.c ruler1.c verif.c manag.c ruler2.c ruler3.c init_stack.c algo.c algo_1.c algo_2.c algo_3.c \
+algo_4.c
 LIBFT = ./libft/libft.a 
 
 all: $(NAME)
