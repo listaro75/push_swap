@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:12:49 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/17 18:34:12 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/20 11:11:54 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_stack_a(t_pslist **stack_a, char **argv, int i)
 
 	while (argv[i])
 	{
-		new_element = ft_add_val(atoi(argv[i]));
+		new_element = ft_add_val(ft_atoi(argv[i]));
 		if (!new_element)
 			return ;
 		if (*stack_a == NULL)
@@ -81,10 +81,10 @@ int	main(int argc, char **argv)
 	t_pslist	*stack_a;
 	t_pslist	*stack_b;
 
-	if (argc == 2)  
-	{    
-		if (ft_tab_to_stack(argv, &stack_a) == 1)    
-			return (ft_putstr_fd("Error", 2), 1);  
+	if (argc == 2)
+	{
+		if (ft_tab_to_stack(argv, &stack_a) == 1)
+			return (ft_putstr_fd("Error", 2), 1);
 	}
 	else if (argc < 2 || ft_verif_digit(argv, 1) == 1 || ft_verif_doublon(argv,
 			1) == 1 || ft_verif_int_max_min(argv, 1) == 1)
