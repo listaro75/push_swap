@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 22:17:54 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/17 16:14:59 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:13:21 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,9 @@ void	ft_algo_base(t_pslist **stack_a, t_pslist **stack_b)
 	int	len;
 
 	len = ft_nombre(*stack_a);
-	if (len <= 3)
+	if (len == 2)
+		return (ft_tri_2(*stack_a));
+	else if (len == 3)
 		return (ft_tri(stack_a));
 	median = ft_mediane(stack_a);
 	while (ft_nombre(*stack_a) > 3)
