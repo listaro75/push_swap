@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:13:22 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/17 16:11:18 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:06:48 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,6 @@ int					ft_nombre(t_pslist *stack);
 void				bubble_sort(int *arr, int len);
 int					ft_nombre(t_pslist *stack);
 void				bubble_sort(int *arr, int n);
+void				ft_tri_2(t_pslist *stack_a);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 19:33:51 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/17 15:43:02 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:05:50 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,10 @@ int	ft_tab_to_stack(char **argv, t_pslist **stack_a)
 		return (free_tab(tab), 1);
 	ft_stack_a(stack_a, tab, 0);
 	return (free_tab(tab), 0);
+}
+
+void	ft_tri_2(t_pslist *stack_a)
+{
+	if (stack_a->val > stack_a->next->val)
+		ft_sa(&stack_a);
 }
