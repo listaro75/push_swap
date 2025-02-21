@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:12:49 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/20 17:10:48 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:20:50 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		if (ft_tab_to_stack(argv, &stack_a) == 1)
-			return (ft_putstr_fd("Error", 2), 1);
+			return (ft_putstr_fd("Error", 2),1);
 	}
 	else if (argc == 3)
 	{
