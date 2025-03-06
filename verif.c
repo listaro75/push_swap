@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 13:25:52 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/17 15:41:05 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/03/05 11:27:50 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,22 @@ void	view(t_pslist *stack)
 		ft_printf("%d \n", stack->val);
 		stack = stack->next;
 	}
+}
+
+int	ft_verif_ordre(t_pslist *stack_a)
+{
+	t_pslist	*tmp;
+	t_pslist	*tmp2;
+
+	tmp = stack_a;
+	tmp2 = stack_a;
+	tmp = tmp->next;
+	while (tmp)
+	{
+		if (tmp2->val > tmp->val)
+			return (1);
+		tmp = tmp->next;
+		tmp2 = tmp2->next;
+	}
+	return (0);
 }

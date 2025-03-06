@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:12:49 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/21 17:20:50 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/03/06 15:01:19 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,25 +81,20 @@ int	main(int argc, char **argv)
 	t_pslist	*stack_a;
 	t_pslist	*stack_b;
 
+	if (argc == 1)
+		return (0);
 	if (argc == 2)
 	{
 		if (ft_tab_to_stack(argv, &stack_a) == 1)
-			return (ft_putstr_fd("Error", 2),1);
-	}
-	else if (argc == 3)
-	{
-		if (argc < 2 || ft_verif_digit(argv, 1) == 1 || ft_verif_doublon(argv,
-				1) == 1 || ft_verif_int_max_min(argv, 1) == 1)
 			return (ft_putstr_fd("Error", 2), 1);
-		ft_stack_a(&stack_a, argv, 1);
-		ft_tri_2(stack_a);
-		return (0);
 	}
 	else if (argc < 2 || ft_verif_digit(argv, 1) == 1 || ft_verif_doublon(argv,
 			1) == 1 || ft_verif_int_max_min(argv, 1) == 1)
 		return (ft_putstr_fd("Error", 2), 1);
 	if (argc > 2)
 		ft_stack_a(&stack_a, argv, 1);
+	if (ft_verif_ordre(stack_a) == 0)
+		return (ft_free_stack(&stack_a), 0);
 	ft_algo_base(&stack_a, &stack_b);
 	return (ft_free_stack(&stack_a), ft_free_stack(&stack_b), 0);
 }

@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 15:47:03 by luda-cun          #+#    #+#             */
-/*   Updated: 2025/02/17 15:56:48 by luda-cun         ###   ########.fr       */
+/*   Updated: 2025/03/06 15:15:24 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	find_cheapest(t_pslist **a, t_pslist **b, t_movelist **m,
 	t_pslist	*tmp;
 	int			max_a;
 
-	(*p)->cost = 9;
 	tmp = *a;
 	tmp = *b;
 	max_a = ft_val_max_a(*a);
